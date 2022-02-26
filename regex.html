@@ -1,0 +1,737 @@
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;
+      charset=windows-1252">
+    <meta name="GENERATOR" content="Microsoft HTML Help Workshop 4.2">
+    <meta name="Content-Style" content="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Regex documentation</title>
+    <link rel="stylesheet" type="text/css" href="coua.css">
+    <script defer language="JavaScript" src="master.js"></script>
+  </head>
+  <body>
+    <img src="winhelppics\happysafe.png" height="60" border="0"
+      align="right" width="60">
+    <h1>Regular expressions</h1>
+    <br>
+    <p class="noindent"><i>What follows is documentation borrowed from
+        the Linux man pages. It has been modified to reflect what can be
+        used as a My Secret Box complex search command:</i><br>
+    </p>
+    <p>A <b><font color="#ff0000"><i>regular expression</i></font></b>
+      (RE) is one or more nonempty <i>branches</i>, separated by '|'.
+      It matches anything that matches one or more of the branches. The
+      <i>branch </i>operator '|' can be thought of as an "or' operator.
+      For example, to find all of the entries that contain either the
+      word "book" or "look", one could specify any of the following REs:
+      "book|look", "(book)|(look)", "(b|l)ook", or "((b|l)ook)".</p>
+    <p>A <b><font color="#ff0000"><i>branch </i></font></b>is one or
+      more <i>pieces</i>, concatenated. It matches a match for the
+      first, followed by a match for the second, and so on.<br>
+    </p>
+    <p>A <b><font color="#ff0000"><i>piece </i></font></b>is an <i>atom</i><i>
+      </i>possibly followed by a single '*', '+', '?', a <i>bound</i>,
+      or <i>approximate match settings</i>. An atom followed by '*'
+      matches a sequence of 0 or more matches of the atom. An atom
+      followed by '+' matches a sequence of 1 or more matches of the
+      atom. An atom followed by '?' matches a sequence of 0 or 1 matches
+      of the atom. Adding a ? after a '*', '+', '?', or <i>bound</i>
+      makes the sub-expression minimal, or non-greedy. Normally a
+      repeated expression is greedy, that is, it matches as many
+      characters as possible. A non-greedy sub-expression matches as few
+      characters as possible. Note that this does not (always) mean the
+      same thing as matching as many or few repetitions as possible.<br>
+    </p>
+    <p>An <b><font color="#ff0000"><i>atom </i></font></b>is a <i>regular
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        expression</i> enclosed in "()" (matching a match for the
+      regular expression), an empty set of "()" (matching the null
+      string), a <i>bracket expression</i> (see below), '.' (matching
+      any single character), '^' (matching the null string at the
+      beginning of a line), '$' (matching the null string at the end of
+      a line), an <i>assertion, </i>a '\' followed by one of the
+      characters "^.[$()|*+?{\" (matching that character taken as an
+      ordinary character), a '\' followed by any other character (except
+      an <i>assertion character</i>) will interpret that character as
+      if the '\' were not present, a <i>comment</i>, an <i>option</i>,
+      or a single character (<i>literal</i>) with no other significance.
+      A '{' followed by a character other than a digit, space, or one of
+      the characters "~+-&lt;" is an ordinary character, not the
+      beginning of a bound. It is illegal to end an RE with '\' or '{'.</p>
+    <p>A <b><font color="#ff0000"><i>bound</i> </font></b>is '{'
+      followed by an unsigned decimal integer, possibly followed by ','
+      possibly followed by another unsigned decimal integer, always
+      followed by '}'. The integers must lie between 0 and 255
+      inclusive, and if there are two of them, the first may not exceed
+      the second. An atom followed by a bound containing one integer <i>i</i>
+      and no comma matches a sequence of exactly <i>i</i> matches of
+      the atom. An atom followed by a bound containing one integer <i>i</i>
+      and a comma matches a sequence of <i>i</i> or more matches of the
+      atom. An atom followed by a bound containing two integers <i>i</i>
+      and <i>j</i> matches a sequence of <i>i</i> through <i>j</i>
+      (inclusive) matches of the atom. Note that minimal repetitions are
+      not currently supported for approximate matching.<br>
+    </p>
+    <p>A <font color="#ff0000"><b><i>bracket expression</i></b></font>
+      is a list of characters enclosed in "[]". It normally matches any
+      single character from the list (but see below). If the list begins
+      with '^', it matches any single character (but see below) <i>not</i>
+      from the rest of the list. If two characters in the list are
+      separated by '-', this is shorthand for the full <i>range</i> of
+      characters between those two (inclusive) in the collating
+      sequence, for example, "[0-9]" matches any decimal digit. It is
+      illegal for two ranges to share an endpoint, for example, "<i>a-c-e</i>".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      Note that the default collating sequence can change with locale. </p>
+    <p>To include a <i>literal </i>']' in the list, make it the first
+      character (following a possible '^'). To include a literal '-',
+      make it the first or last character, or the second endpoint of a
+      range. To use a literal '-' as the first endpoint of a range,
+      enclose it in "[." and ".]" to make it a collating element (see
+      below). With the exception of these and some combinations using
+      '[' (see next paragraphs), all other special characters, including
+      '\', lose their special significance within a bracket expression.</p>
+    <p>Within a <i>bracket expression</i>, a <font color="#ff0000"><b><i>collating
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            element</i></b></font> (a character, a multi-character
+      sequence that collates as if it were a single character, or a
+      collating-sequence name for either) enclosed in "[." and ".]"
+      stands for the sequence of characters of that collating element.
+      The sequence is a single element of the bracket expression�s list.
+      A bracket expression containing a multi-character collating
+      element can thus match more than one character, for example, if
+      the collating sequence includes a "ch" collating element, then the
+      RE "[[.ch.]]*c" matches the first five characters of "chchcc".</p>
+    <p>Within a <i>bracket expression</i>, a <i>collating element</i>
+      enclosed in "[=" and "=]" is an <font color="#ff0000"><b><i>equivalence
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            class</i></b></font>, standing for the sequences of
+      characters of all <i>collating elements</i> equivalent to that
+      one, including itself. (If there are no other equivalent <i>collating
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        elements</i>, the treatment is as if the enclosing delimiters
+      were "[." and ".]".) For example, if o and ^ are the members of an
+      <i>equivalence class</i>, then "[[=o=]]", "[[=<b>^=]]</b>", and
+      "[o<b>^]</b>" are all synonymous. An <i>equivalence class</i> may
+      not be an endpoint of a range.</p>
+    <p>Within a <i>bracket expression</i>, the name of a <font
+        color="#ff0000"><b><i>character class</i></b></font> enclosed in
+      "[:" and ":]" stands for the list of all characters belonging to
+      that class. Note that this implies double square brackets are
+      required to use a <i>character class</i> name in a bracket
+      expression. E.g., RE "firewall[0-9]" is equivalent to
+      "firewall[[:digit:]]". Standard <i>character class</i> names are:</p>
+    <blockquote>
+    <p><button class="button button2" data-modal-target="#alnum" title="Click for class definition">alnum</button>
+       <button class="button button2" data-modal-target="#digit" title="Click for class definition">digitl</button>
+       <button class="button button2" data-modal-target="#punct" title="Click for class definition">punct</button>
+    </p>
+    <p><button class="button button2" data-modal-target="#alpha" title="Click for class definition">alpha</button>
+       <button class="button button2" data-modal-target="#graph" title="Click for class definition">graph</button>
+       <button class="button button2" data-modal-target="#space" title="Click for class definition">space</button>
+    </p>
+    <p><button class="button button2" data-modal-target="#blank" title="Click for class definition">blank</button>
+       <button class="button button2" data-modal-target="#lower" title="Click for class definition">lower</button>
+       <button class="button button2" data-modal-target="#upper" title="Click for class definition">upper</button>
+    </p>
+    <p><button class="button button2" data-modal-target="#cntrl" title="Click for class definition">cntrl</button>
+       <button class="button button2" data-modal-target="#print" title="Click for class definition">print</button>
+       <button class="button button2" data-modal-target="#xdigit" title="Click for class definition">xdigit</button>
+    </p>     
+  </blockquote>     
+    <p>&nbsp;A non-English locale may provide others. A <i>character
+        class</i> may not be used as an endpoint of a range.<br>
+    </p>
+    <p>Within an <i>atom</i>, an <font color="#ff0000"><b><i>assertion
+          </i></b></font>is a shorthand that utilizes <i>assertion-characters</i>
+      for specifying certain <i>boundaries </i>and <i>character
+        classes</i>. <i>Assertion-characters </i>are always prefixed
+      by a '\'.<br>
+    </p>
+    <p>The recognized <font color="#ff0000"><b><i>assertion-character</i></b></font>s
+      are as follows:</p>
+    <ul class="no-bullets">
+      <font face="Courier New, Courier, monospace">
+        <li class="no-padding">&lt; - Beginning of word </li>
+        <li class="no-padding">&gt; - End of word </li>
+        <li class="no-padding">b - Word boundary </li>
+        <li class="no-padding">B - Non-word boundary </li>
+        <li class="no-padding">d - Digit character (equivalent to
+          [[:digit:]]) </li>
+        <li class="no-padding">D - Non-digit character (equivalent to
+          [^[:digit:]]) </li>
+        <li class="no-padding">s - Space character (equivalent to
+          [[:space:]]) </li>
+        <li class="no-padding">S - Non-space character (equivalent to
+          [^[:space:]]) </li>
+        <li class="no-padding">w - Word character (equivalent to
+          [[:alnum:]_]) </li>
+        <li class="no-padding">W - Non-word character (equivalent to
+          [^[:alnum:]_]) </li>
+      </font>
+    </ul>
+    <p>A <font color="#ff0000"><b><i>literal </i></b></font>is either
+      an ordinary character (a character that has no other significance
+      in the context), an 8 bit hexadecimal encoded character (e.g.
+      \x1B), a wide hexadecimal encoded character (e.g. \x{263a}), or an
+      escaped character. An escaped character is a \ followed by any
+      character, and matches that character. Escaping can be used to
+      match characters which have a special meaning in RE syntax. A \
+      cannot be the last character of a RE. Escaping also allows you to
+      include a few non-printable characters in the regular expression.
+      These special escape sequences include: </p>
+    <ul class="no-bullets">
+      <font face="Courier New, Courier, monospace">
+        <li class="no-padding">\a - Bell character (ASCII code 7)</li>
+        <li class="no-padding">\e - Escape character (ASCII code 27)</li>
+        <li class="no-padding">\f - Form-feed character (ASCII code 12)</li>
+        <li class="no-padding">\n - New-line/line-feed character (ASCII
+          code 10)</li>
+        <li class="no-padding">\r - Carriage return character (ASCII
+          code 13)</li>
+        <li class="no-padding">\t - Horizontal tab character (ASCII code
+          9)</li>
+      </font>
+    </ul>
+    <p>My Secret Box strips off New-line, Form-feed, and Carriage return
+      characters so they will never appear in the name of a secret.
+      However, if any of the other characters were inadvertently entered
+      into a secret's name, the above codes can be used to search for
+      them. The use of these special characters in secret names is
+      strongly discouraged.<br>
+    </p>
+    <p><b><i><font color="#ff0000">Approximate </font></i></b><font
+        color="#ff0000"><b><i>matching settings</i></b><font
+          color="#000000"> are extensions to the RE standard which
+          permit the control of the approximate matching algorithm at a
+          fine grain level. Each <i>piece </i>within the RE can have a
+          separate setting. </font></font><font color="#ff0000"><font
+          color="#000000">The <i>approximate matching settings</i> for
+          a </font></font><font color="#ff0000"><font color="#000000"><font
+            color="#ff0000"><font color="#000000"><i>piece </i></font></font>can
+
+
+
+
+
+
+
+
+
+
+
+          be changed by appending <i>approx-settings</i> to the </font></font><font
+        color="#ff0000"><font color="#000000"><font color="#ff0000"><font
+              color="#000000"><i>piece</i></font></font>. Limits for the
+          number of errors can be set and a cost function can be
+          defined.<br>
+        </font></font></p>
+    <p><i>An approximate </i><i>matching setting</i> is a list of
+      characters enclosed in "{}". The characters must specify either
+      one or more <i>count-limits</i> and/or a <i>cost-equation</i>. A
+      <i>count-limit</i> begins with one of the characters "+-#~" and is
+      followed by a number. Multiple <i>count-limits </i>can be
+      concatenated. A <i>cost-equation </i>is zero or more <i>cost-terms</i>
+      followed by the <i>maximum allowed cost</i>.</p>
+    <p> The <font color="#ff0000"><b><i>count-limits</i></b></font> can
+      be used to set limits for the number of insertions (<tt>+</tt>),
+      deletions (<tt>-</tt>), substitutions (<tt>#</tt>), and total
+      number of errors (<tt>~</tt>). If the number part is omitted, the
+      specified error count will be unlimited.<br>
+    </p>
+    <p>A <font color="#ff0000"><b><i>cost-term</i></b></font> is a
+      number with one of the characters "ids" appended to it. No space
+      is permitted between the number and the letter. The <font
+        color="#ff0000"><b><i>maximum allowed cost</i></b></font> is a
+      number prefaced by the character "&lt;".<br>
+    </p>
+    <p> The <font color="#ff0000"><b><i>cost-equation</i></b></font>
+      can be thought of as a mathematical equation consisting of a sum
+      of <i>cost-terms</i>, where <tt>i</tt>, <tt>d</tt>, and <tt>s</tt>
+      stand for the number of insertions, deletions, and substitutions,
+      respectively. Each <i>cost-term</i> (<tt>i</tt>, <tt>d</tt>, and
+      <tt>s)</tt> can have a multiplier. The multiplier is the cost of
+      that error, and the number after <tt>&lt;</tt> is the <i>maximum
+        allowed cost</i> of a match. Spaces and pluses can be inserted
+      to make the equation readable. In fact, when specifying only a
+      cost equation, adding a space after the opening <tt>{</tt> is <strong>required</strong>.
+    </p>
+    <p> Examples: </p>
+    <table class="mytable">
+      <tbody>
+        <tr>
+          <td class="mytable">{~}</td>
+          <td class="mytablela">Sets the maximum number of errors to
+            unlimited.</td>
+        </tr>
+        <tr>
+          <td class="mytable">{~1}</td>
+          <td class="mytablela">Sets the maximum number of errors to
+            one. This is the default My Secret Box setting.<br>
+          </td>
+        </tr>
+        <tr>
+          <td class="mytable">{~0}</td>
+          <td class="mytablela">Sets the maximum number of errors to
+            zero. This disables approximate matching.</td>
+        </tr>
+        <tr>
+          <td class="mytable">{+2~5}</td>
+          <td class="mytablela">Sets the maximum number of errors to
+            five, and the maximum number of insertions to two.</td>
+        </tr>
+        <tr>
+          <td class="mytable">{&lt;3}</td>
+          <td class="mytablela">Sets the maximum cost to three.</td>
+        </tr>
+        <tr>
+          <td class="mytable" width="35%">{ 2i + 1d + 2s &lt; 5 }</td>
+          <td class="mytablela">Sets the cost of an insertion to two, a
+            deletion to one, a substitution to two, and the maximum cost
+            to five.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p><font color="#ff0000"><font color="#000000">A </font><b><i>comment<font
+              color="#000000"> </font></i></b><font color="#000000">has
+          no impact on the results of a RE. Its sole purpose is to add
+          clarifying documentation to the command. <i>Comments </i>can
+          be applied at the <i>atom </i>level. A <i>comment </i></font></font><font
+        color="#ff0000"><font color="#000000">is a list of characters
+          enclosed in "()". The first two characters following the "(" <b>must
+
+
+
+
+
+          </b>be "?#". There <b>must </b>be no spaces between the
+          opening characters (I.e., all comments begin with "(?#"
+          exactly). Example: (?# this is a comment )</font></font></p>
+    <p><font color="#ff0000"><font color="#000000">The <b><i><font
+                color="#ff0000">Options </font></i></b>modifier allows
+          interpretation options to be turned on or off for particular
+          parts of the RE. </font></font><i>Options </i><font
+        color="#ff0000"><font color="#000000"><font color="#ff0000"><font
+              color="#000000">can be applied at the <i>atom </i>level.
+              A </font></font></font></font><font color="#ff0000"><font
+          color="#000000"><font color="#ff0000"><font color="#000000"><font
+                color="#ff0000"><font color="#000000"><i>option </i></font></font></font></font><font
+            color="#ff0000"><font color="#000000">is one or more
+              characters enclosed in "()". The first character following
+              the "(" <b>must </b>be "?". There <b>must </b>be no
+              space between the opening characters (I.e., all </font></font></font></font><font
+        color="#ff0000"><font color="#000000"><font color="#ff0000"><font
+              color="#000000"><font color="#ff0000"><font
+                  color="#000000"><i>options </i></font></font>begin
+              with "(?" exactly). </font></font>The <i>options </i>control
+
+
+
+
+          how the matching algorithm for the RE is applied. If the
+          option is specified without a sign, it is turned on. If it is
+          specified as a negative (after a "-"), it is turned off. The
+          recognized options are:<br>
+          <table class="mytable">
+            <tbody>
+              <tr>
+                <td class="mytable">i</td>
+                <td class="mytablela">Case insensitive. (By default,
+                  this is turned on in My Secret Box. To turn it off,
+                  use "-i".)<br>
+                </td>
+              </tr>
+              <tr>
+                <td class="mytable">n</td>
+                <td class="mytablela">Forces special handling of the new
+                  line character. (This option is recognized but has no
+                  effect in My Secret Box - all new line characters are
+                  stripped off.)<br>
+                </td>
+              </tr>
+              <tr>
+                <td class="mytable">r</td>
+                <td class="mytablela">Causes the RE atom to be matched
+                  in a right associative manner rather than the normal
+                  left associative manner.</td>
+              </tr>
+              <tr>
+                <td class="mytable">U</td>
+                <td class="mytablela">Forces repetition operators to be
+                  non-greedy unless a ? is appended.</td>
+              </tr>
+            </tbody>
+          </table>
+        </font></font></p>
+    <p><font color="#ff0000"><font color="#000000">Options are usually
+          applied to an entire RE. However, they can also be applied to
+          individual expressions by using the
+          "(?options:extended-regexp)" syntax.<br>
+        </font></font></p>
+    <font color="#ff0000"><font color="#000000">
+        <p>Notes:<br>
+        </p>
+        <ul>
+          <li>In the event that a RE could match more than one
+            sub-string of a given string, the RE matches the one
+            starting earliest in the string. If the RE could match more
+            than one sub-string starting at that point, it matches the
+            longest. Sub-expressions also match the longest possible
+            sub-strings subject to the constraint that the whole match
+            be as long as possible (with sub-expressions starting
+            earlier in the RE taking priority over ones starting later).
+            Note that higher-level sub-expressions thus take priority
+            over their lower-level component sub-expressions.</li>
+          <li>Match lengths are measured in characters, not collating
+            elements. A null string is considered longer than no match
+            at all. For example, "bb*" matches the three middle
+            characters of "abbbc", "(wee|week)(knights|nights)" matches
+            all ten characters of "weeknights", when "(.*).*" is matched
+            against "abc" the parenthesized sub-expression matches all
+            three characters, and when "(a*)*" is matched against "bc"
+            both the whole RE and the parenthesized sub-expression match
+            the null string.</li>
+          <li>If case-independent matching is specified, the effect is
+            much as if all case distinctions had vanished from the
+            alphabet. When an alphabetic that exists in multiple cases
+            appears as an ordinary character outside a bracket
+            expression, it is effectively transformed into a bracket
+            expression containing both cases, for example, 'x' becomes
+            "[xX]". When it appears inside a bracket expression, all
+            case counterparts of it are added to the bracket expression,
+            so that, for example, "[x]" becomes "[xX]" and "[^x]"
+            becomes "[^xX]".</li>
+          <li>The "." operator overrides case sensitivity. It will match
+            any character regardless of the setting of the case
+            sensitivity option.<br>
+          </li>
+          <li>REs can be no longer than 254 bytes.</li>
+          <li>Back references are not supported.<br>
+          </li>
+          <li>The author has not tested collating elements or equivalent
+            classes in <font color="#ff0000"><font color="#000000">the
+                My Secret Box complex search box. According to source
+                documentation, they should work.</font></font><i><font
+                color="#ff0000"><font color="#000000"><br>
+                </font></font></i></li>
+        </ul>
+        <hr>
+        <p><a onclick="doSection(cpox)" class="sidebar" href="#nowhere"><b>Copyright</b></a></p>
+        <div class="sidebarwide" id="cpox" style="display: none"
+          onclick="noSection(cpox)">
+          <p class="noindent">From Henry Spencer's regex package (as
+            found in the apache distribution). The package carries the
+            following copyright:</p>
+          <p class="noindent">Copyright 1992, 1993, 1994 Henry Spencer.
+            All rights reserved.</p>
+          <p class="noindent">This software is not subject to any
+            license of the American Telephone and Telegraph Company or
+            of the Regents of the University of California.</p>
+          <p class="noindent">Permission is granted to anyone to use
+            this software for any purpose on any computer system, and to
+            alter it and redistribute it, subject to the following
+            restrictions:</p>
+          <ol>
+            <li>The author is not responsible for the consequences of
+              use of this software, no matter how awful, even if they
+              arise from flaws in it.<br>
+            </li>
+            <li>The origin of this software must not be misrepresented,
+              either by explicit claim or by omission. Since few users
+              ever read sources, credits must appear in the
+              documentation.<br>
+            </li>
+            <li>Altered versions must be plainly marked as such, and
+              must not be misrepresented as being the original software.
+              Since few users ever read sources, credits must appear in
+              the documentation.<br>
+            </li>
+            <li>This notice may not be removed or altered.<br>
+            </li>
+          </ol>
+          <br>
+          <br>
+          <p class="noindent"> This is the license, copyright notice,
+            and disclaimer for TRE, a regex matching package (library
+            and tools) with support for approximate matching:</p>
+          <p class="noindent"> Copyright (c) 2001-2009 Ville Laurikari <vl@iki.fi>
+              All rights reserved.</vl@iki.fi></p>
+          <p class="noindent"> Redistribution and use in source and
+            binary forms, with or without modification, are permitted
+            provided that the following conditions are met:</p>
+          <ol>
+            <li> Redistributions of source code must retain the above
+              copyright notice, this list of conditions and the
+              following disclaimer.</li>
+            <li>Redistributions in binary form must reproduce the above
+              copyright notice, this list of conditions and the
+              following disclaimer in the documentation and/or other
+              materials provided with the distribution.</li>
+          </ol>
+          <font face="Courier New, Courier, monospace">
+            <p class="noindent"> THIS SOFTWARE IS PROVIDED BY THE
+              COPYRIGHT HOLDER AND CONTRIBUTORS ``AS IS'' AND ANY
+              EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+              TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+              FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL
+              THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY
+              DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+              CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+              PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+              DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED
+              AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+              STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+              OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+              SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
+              DAMAGE.</p>
+          </font> </div>
+        <!--text scripts-->
+<div class="modal" id="alnum">
+  <div class="modal-header">
+    <div class="title">Definition of alnum</div>
+    <button data-close-button class="close-button">&times;</button>
+  </div>
+  <div class="modal-body">
+    any alphanumeric character
+  </div>
+</div>
+<div class="modal" id="digit">
+  <div class="modal-header">
+    <div class="title">Definition of digit</div>
+    <button data-close-button class="close-button">&times;</button>
+  </div>
+  <div class="modal-body">
+    any digit (0 through 9)
+  </div>
+</div>
+<div class="modal" id="punct">
+  <div class="modal-header">
+    <div class="title">Definition of punct</div>
+    <button data-close-button class="close-button">&times;</button>
+  </div>
+  <div class="modal-body">
+    any printable character which is not a space or an alphanumeric character
+  </div>
+</div>
+<div class="modal" id="alpha">
+  <div class="modal-header">
+    <div class="title">Definition of alpha</div>
+    <button data-close-button class="close-button">&times;</button>
+  </div>
+  <div class="modal-body">
+    any alphabetic character
+  </div>
+</div>
+<div class="modal" id="graph">
+  <div class="modal-header">
+    <div class="title">Definition of graph</div>
+    <button data-close-button class="close-button">&times;</button>
+  </div>
+  <div class="modal-body">
+    any printable character except space
+  </div>
+</div>
+<div class="modal" id="space">
+  <div class="modal-header">
+    <div class="title">Definition of space</div>
+    <button data-close-button class="close-button">&times;</button>
+  </div>
+  <div class="modal-body">
+    any white-space character. (These are: space, form-feed, newline, carriage return, horizontal tab, and vertical tab)
+  </div>
+</div>
+<div class="modal" id="blank">
+  <div class="modal-header">
+    <div class="title">Definition of blank</div>
+    <button data-close-button class="close-button">&times;</button>
+  </div>
+  <div class="modal-body">
+    any blank character; that is, a space or a tab
+  </div>
+</div>
+<div class="modal" id="lower">
+  <div class="modal-header">
+    <div class="title">Definition of lower</div>
+    <button data-close-button class="close-button">&times;</button>
+  </div>
+  <div class="modal-body">
+    any lower-case character
+  </div>
+</div>
+<div class="modal" id="upper">
+  <div class="modal-header">
+    <div class="title">Definition of upper</div>
+    <button data-close-button class="close-button">&times;</button>
+  </div>
+  <div class="modal-body">
+    any uppercase letter
+  </div>
+</div>
+<div class="modal" id="cntrl">
+  <div class="modal-header">
+    <div class="title">Definition of cntrl</div>
+    <button data-close-button class="close-button">&times;</button>
+  </div>
+  <div class="modal-body">
+    any control character
+  </div>
+</div>
+<div class="modal" id="print">
+  <div class="modal-header">
+    <div class="title">Definition of print</div>
+    <button data-close-button class="close-button">&times;</button>
+  </div>
+  <div class="modal-body">
+    any printable character including space
+  </div>
+</div>
+<div class="modal" id="xdigit">
+  <div class="modal-header">
+    <div class="title">Definition of xdigit</div>
+    <button data-close-button class="close-button">&times;</button>
+  </div>
+  <div class="modal-body">
+    any hexadecimal digit, that is, one of 0 1 2 3 4 5 6 7 8 9 a b c d e f A B C D E F
+  </div>
+</div>
+<div id="overlay"></div>
+<!--text control--> 
+<!--<object id="popup"
+          type="application/x-oleobject"
+	  classid="clsid:adb880a6-d8ff-11cf-9377-00aa003b7a11"> </object>-->
+      </font></font>
+  </body>
+</html>

@@ -1,0 +1,409 @@
+/* Cascading Style Sheet for HTML Help Workshop */
+
+body		{ 
+			margin-right: 1.0em;
+			}
+
+a			{
+			margin-left: 0.0em
+			}
+a:link		{ color: #0000FF; } 
+
+a:active	{ color: #FF33CC; }
+
+a:visited 	{  color: #800080; }
+
+a:hover		{color: #800080;
+			font-weight: bold; }
+
+a:sidebar	{color: #339900; }
+
+.shadowbox {
+  width: 15em;
+  border: 1px solid #333;
+  box-shadow: 8px 8px 5px #444;
+  padding: 8px 12px;
+  background-image: linear-gradient(180deg, #fff, #ddd 40%, #ccc);
+}
+
+.alignleft {
+	margin-left: 0.75em;
+}
+
+h1		{ 
+		margin-left: 0.5em;
+		margin-bottom: .5em;
+		font-size:1.5em;
+		}
+
+h2		{ font-size: 115%;  
+		margin-top: 1.5em;
+		margin-bottom: .5em;  }
+
+h3		{ font-size: 100%; 
+		margin-top: 1.2em;  
+		margin-bottom: .5em;  }
+
+h4		{ font-size: 100%;
+        color: darkmagenta;
+		margin-top: 1.2em;  
+		margin-bottom: .5em;  }
+
+p		{ 
+		margin-left: 0.75em;
+		text-indent: 1.25em;
+		}
+		
+p.noindent		{ margin-top:6pt; 
+		margin-left: 0.75em;
+		text-indent: 0.0em;
+		margin-bottom: 6pt;	}
+
+p.margin {
+	margin-left: 57pt;
+	margin-top: -47pt; }
+	
+p.margin2 {
+	margin-left: 57pt; } 
+	
+li p		{ margin-top: .6em;
+		margin-bottom: 0em;  }
+		
+big		{  font-weight: bold; 
+		font-size: 105%;  }
+		
+ol		{margin-top: .6em; 
+		margin-left: 2.2em; 
+		margin-bottom: 0em }	
+	
+ul		{margin-top: .6em; 	
+		margin-bottom: 0em;
+		margin-left: 2.2em;  }	
+		
+ul.no-bullets {
+  list-style-type: none; /* Remove bullets */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margins */
+}		
+
+ul.no-bullets2 {
+  list-style-type: none; /* Remove bullets */
+  padding: 0; /* Remove padding */
+  margin: 2em; /* add margins */
+}
+
+ol ul		{  list-style: disc; margin-top: 2em;  }
+
+li		{padding-bottom: .3em;
+		margin-left: 1.25em;  }
+		
+li.no-padding {
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margins */
+  margin-left: 1.25em;
+}
+
+li.more-padding {
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margins */
+  margin-left: 3em;
+}
+
+dl ul		{ margin-top: 2em;  
+		margin-bottom: 0em;  }	/*list item inside a def/term*/
+
+dl		{ margin-top: -1em;  }
+
+ol dl	{ margin-top: -1.5em;
+		 margin-left: 0em;  }		/*term/def list inside a numbered list*/
+
+ol dl dl	{  margin-top: 0em;
+		margin-left: .2em;  }		/*term/def list inside a term/def list*/
+
+dd		{ margin-bottom: 0em;	/*not currently working*/
+		margin-left: 1.5em;  }
+
+dt		{  padding-top: 2em;
+		font-weight: bold; 
+		margin-left: 1.5em;  }
+		
+code 	{ font-family:courier; }
+		
+code2 	{
+		font-family:courier, monospace;
+		font-size:8px;
+		font-weight:bold;
+  		}
+  		
+.adjust-line-height {
+		line-height: 1em;
+		}  		
+
+pre		{ margin-top: 0em;
+		margin-bottom: 1.5em; 
+		font-family: Courier;
+		}
+
+table 	{ font-size: 100%;
+		text-align: left;
+		margin-top: 1em;
+		}
+		
+tr		{ margin: .50em;
+		vertical-align: top;
+		}
+			
+th 		{ text-align: left;
+		margin: .50em;
+		vertical-align: top;
+		background: #dddddd;
+		}
+						
+td		{ margin: .50em;
+		vertical-align: top;
+		}
+
+table.mytable 	{ font-size: 100%;
+		margin-left: 1.75em;
+		text-align: center;
+		margin-top: 1em;
+		border: 1px solid grey;
+		border-spacing: 0;
+		border-collapse: collapse;
+		}
+		
+th.mytable 		{ text-align: left;
+		margin: .50em;
+		vertical-align: top;
+		background: #dddddd;
+		border: 1px solid grey;
+		}
+						
+td.mytable		{ margin: .50em;
+		vertical-align: top;
+		border: 1px solid grey;
+		padding: 0.25em;
+		}
+		
+td.mytablela		{ margin: .50em;
+		vertical-align: top;
+		text-align: left;
+		border: 1px solid grey;
+		padding: 0.25em;
+		}
+
+/* Only use this for sidebars that ARE in a list */
+DIV.sidebartext {
+	position: relative;
+	left: -22px;
+	height: 72px;
+	width: 300px;
+	margin-top: .6em;
+	margin-right: 3em;
+	margin-left: 0;
+	margin-bottom: .6em;
+	padding-top: .75em;
+	padding-right: 6px;
+	padding-left: .75em;
+	padding-bottom: .75em;
+	cursor: hand;
+	border-left: 4pt solid #339900;
+	background-color: #F0F0F0; }
+
+/* Only use this for sidebars that are NOT in a list */
+DIV.sidebartbl {
+	height: 72px;
+	width: 300px;
+	margin-top: .6em;
+	margin-right: 3em;
+	margin-left: 0;
+	margin-bottom: .6em;
+	padding-top: .75em;
+	padding-right: 8em;
+	padding-left: .75em;
+	padding-bottom: .75em;
+	cursor: hand;
+	border-left: 4pt solid #339900;
+	background-color: #F0F0F0; }
+	
+/* Only use this for sidebars that are NOT in a list */
+DIV.sidebarwide {
+	margin-top: .6em;
+	margin-left: 0;
+	margin-bottom: .6em;
+	padding-top: .75em;
+	padding-left: .75em;
+	padding-bottom: .75em;
+	cursor: hand;
+	border-left: 4pt solid #339900;
+	background-color: #F0F0F0; }
+
+	
+a:visited.sidebar: {
+	color: #339900;
+	text-decoration: none; }
+	
+a:hover.sidebar: {
+	text-decoration: underline; }
+
+.endlink {
+	line-height: 6pt;
+	position: relative;
+	top: 1pt;
+	background-color: transparent;
+	font-weight: bold;
+	font-size: 7pt;
+	font-style: italic;
+	color: black;
+	text-decoration: none;
+	cursor: hand;
+	width: 20px;
+	height: 8pt;
+	padding-top: -2pt;
+	padding-bottom: 1pt;
+	margin: 0pt;
+	margin-left: 0.75em;
+	border-bottom: 1pt solid #cc0033;
+	border-top: 1pt solid #cc0033; }
+
+
+ /* Popup container */
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* The actual popup (appears on top) */
+.popup .popuptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+/* Popup arrow */
+/*
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+*/
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+} 
+
+*, *::after, *::before {
+	box-sizing: border-box;
+  }
+
+  .modal {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(0);
+	transition: 200ms ease-in-out;
+	border: 1px solid black;
+	border-radius: 10px;
+	z-index: 10;
+	background-color: white;
+	width: 500px;
+	max-width: 80%;
+  }
+  
+  .modal.active {
+	transform: translate(-50%, -50%) scale(1);
+  }
+  
+  .modal-header {
+	padding: 10px 15px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 1px solid black;
+  }
+  
+  .modal-header .title {
+	font-size: 1.25rem;
+	font-weight: bold;
+  }
+  
+  .modal-header .close-button {
+	cursor: pointer;
+	border: none;
+	outline: none;
+	background: none;
+	font-size: 1.25rem;
+	font-weight: bold;
+  }
+  
+  .modal-body {
+	padding: 10px 15px;
+  }
+  
+  #overlay {
+	position: fixed;
+	opacity: 0;
+	transition: 200ms ease-in-out;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, .5);
+	pointer-events: none;
+  }
+  
+  #overlay.active {
+	opacity: 1;
+	pointer-events: all;
+  }
+
+  .button {
+	background-color: #c8cac8; /* Grey */
+	border: 1px solid #000000;
+	color: black;
+	padding: 5px 5px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 1.15rem;
+	border-radius: 5px;
+  }
+
+  .button2 {
+	background-color: white;
+	color: rgb(12, 26, 233);
+	font-style: italic;
+	text-decoration: underline;
+	padding: 0px 5px;	
+	border: none;
+	width: 5rem;
+  }

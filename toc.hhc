@@ -1,0 +1,458 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!-- Sitemap 1.0 -->
+</HEAD><BODY>
+<UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="My Secret Box Help">
+		<param name="Local" value="AboutSBHtopics.htm">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Getting help">
+			<param name="Local" value="gettingHelp.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="General topics">
+			<param name="Local" value="SBHgeneral.htm">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="The purpose of your Secret Box">
+				<param name="Local" value="purpose.htm">
+				</OBJECT>
+			<UL>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Importance of unique passwords for every site">
+					<param name="Local" value="importanceOfUnique.htm">
+					</OBJECT>
+			</UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="First time use">
+				<param name="Local" value="firstTimeUse.htm">
+				</OBJECT>
+			<UL>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="The secrets database">
+					<param name="Local" value="secretsDB.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="The master password">
+					<param name="Local" value="masterPW.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="How to choose a good master password">
+					<param name="Local" value="goodMasterPW.htm">
+					</OBJECT>
+			</UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Saving a secret">
+				<param name="Local" value="savingAsecret.htm">
+				</OBJECT>
+			<UL>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Simple secrets">
+					<param name="Local" value="simpleSecretsSave.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Complex secrets">
+					<param name="Local" value="complexSecretsSave.htm">
+					</OBJECT>
+				<UL>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Adding auxiliary secrets">
+						<param name="Local" value="auxPW.htm">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Archiving secrets">
+						<param name="Local" value="archiving.htm">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Generating random passwords">
+						<param name="Local" value="genRandomPW.htm">
+						</OBJECT>
+					<UL>
+						<LI> <OBJECT type="text/sitemap">
+							<param name="Name" value="Safety of random passwords">
+							<param name="Local" value="safetyOfRandom.htm">
+							</OBJECT>
+					</UL>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Testing passwords from the edit window">
+						<param name="Local" value="testingPWedits.htm">
+						</OBJECT>
+				</UL>
+			</UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Finding a secret">
+				<param name="Local" value="findingSecrets.htm">
+				</OBJECT>
+			<UL>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Using the list">
+					<param name="Local" value="usingListBox.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Using the search box">
+					<param name="Local" value="usingSearchBox.htm">
+					</OBJECT>
+			</UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Using a secret">
+				<param name="Local" value="usingAsecret.htm">
+				</OBJECT>
+			<UL>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Problem web sites">
+					<param name="Local" value="problemWebSites.htm">
+					</OBJECT>
+			</UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Changing secret data">
+				<param name="Local" value="changingAsecret.htm">
+				</OBJECT>
+			<UL>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Complex secrets">
+					<param name="Local" value="complexSecretsChange.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Renaming a secret">
+					<param name="Local" value="renamingAsecret.htm">
+					</OBJECT>
+			</UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Deleting a secret">
+				<param name="Local" value="deletingAsecret.htm">
+				</OBJECT>
+			<UL>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Un-deleting a secret">
+					<param name="Local" value="undeletingAsecret.htm">
+					</OBJECT>
+			</UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Changing the master password">
+				<param name="Local" value="chaningMasterPW.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Backing up secrets">
+				<param name="Local" value="backingUpSecrets.htm">
+				</OBJECT>
+			<UL>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Manual backup">
+					<param name="Local" value="manualBackups.html">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Local backups">
+					<param name="Local" value="localBackups.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Remote backups">
+					<param name="Local" value="remoteBackups.htm">
+					<param name="ImageNumber" value="2">
+					</OBJECT>
+				<UL>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Remote Server Types">
+						<param name="Local" value="remoteServerTypes.htm">
+						<param name="ImageNumber" value="9">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Choosing a Remote Backup Server">
+						<param name="Local" value="remoteServerChoice.htm">
+						</OBJECT>
+				</UL>
+			</UL>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Search functionality">
+			<param name="Local" value="searchFunction.htm">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Simple searches">
+				<param name="Local" value="simpleSearch.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Complex searches">
+				<param name="Local" value="complexSearch.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Regex documentation">
+				<param name="Local" value="regex.html">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Settings">
+			<param name="Local" value="settings.htm">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Global settings">
+				<param name="Local" value="globalSettings.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Database settings">
+				<param name="Local" value="databaseSettings.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Remote settings">
+				<param name="Local" value="remoteSettings.htm">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Technical details and specifications">
+			<param name="Local" value="TechDetails.htm">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Available versions">
+				<param name="Local" value="availableVersions.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Command line parameters">
+				<param name="Local" value="commandLineArgs.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Encryption details">
+				<param name="Local" value="encryptionDetails.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="File formats">
+				<param name="Local" value="fileFormats.htm">
+				</OBJECT>
+			<UL>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Settings File Format">
+					<param name="Local" value="settingsfileformat.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Secrets File Format">
+					<param name="Local" value="secretsfileformat.htm">
+					</OBJECT>
+			</UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Clipboard use">
+				<param name="Local" value="clipboardUse.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Memory use">
+				<param name="Local" value="memoryUse.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Using text mode">
+				<param name="Local" value="usingTextMode.htm">
+				</OBJECT>
+			<UL>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Tutor overview">
+					<param name="Local" value="tutorOverview.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Definitions">
+					<param name="Local" value="tutorDefinitions.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Display Point layout">
+					<param name="Local" value="displayPointLayout.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Type ahead">
+					<param name="Local" value="typeAhead.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Menus">
+					<param name="Local" value="menusTutor.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Text input">
+					<param name="Local" value="textInput.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="List input">
+					<param name="Local" value="listInput.htm">
+					</OBJECT>
+				<UL>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Single mode">
+						<param name="Local" value="singleMode.htm">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Recursive mode">
+						<param name="Local" value="recursiveMode.htm">
+						</OBJECT>
+				</UL>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Alternate input file">
+					<param name="Local" value="alternateInputFile.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Alternate output file">
+					<param name="Local" value="alternateOutputFile.htm">
+					</OBJECT>
+			</UL>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Troubleshooting">
+			<param name="Local" value="troubleshooting.htm">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Displaying version information">
+				<param name="Local" value="displayingVersionInfo.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Displaying file information">
+				<param name="Local" value="displayingFileInfo.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Displaying last change date of a secret">
+				<param name="Local" value="displayingLastChangeDate.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Recovering from a crash">
+				<param name="Local" value="recoveringFromAcrash.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Restoring from a backup file">
+				<param name="Local" value="restorinmgFromBackups.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Using a debug version">
+				<param name="Local" value="usingAdebugVersion.htm">
+				</OBJECT>
+		</UL>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Help Viewer">
+		<param name="Local" value="htmlhelponhelp\main.htm">
+		<param name="URL" value="main.htm">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="The Help Viewer">
+			<param name="Local" value="htmlhelponhelp\general.htm">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Using The Help Viewer">
+				<param name="Local" value="htmlhelponhelp\overview.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Get more out of help">
+				<param name="Local" value="htmlhelponhelp\more.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Find a help topic">
+				<param name="Local" value="htmlhelponhelp\topic.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Create a list of favorite topics">
+				<param name="Local" value="htmlhelponhelp\favs.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Copy a help topic">
+				<param name="Local" value="htmlhelponhelp\copy.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Print the current topic">
+				<param name="Local" value="htmlhelponhelp\print.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Get help in a dialog box">
+				<param name="Local" value="htmlhelponhelp\db.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Find topics using toolbar buttons">
+				<param name="Local" value="htmlhelponhelp\move.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Hide or show the Navigation pane">
+				<param name="Local" value="htmlhelponhelp\hide.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Use accessibility shortcut keys">
+				<param name="Local" value="htmlhelponhelp\accessibility.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Use shortcut menu commands">
+				<param name="Local" value="htmlhelponhelp\shortcut.htm">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Full-Text Search">
+			<param name="Local" value="htmlhelponhelp\ftsover.htm">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Use full-text search">
+				<param name="Local" value="htmlhelponhelp\fts_simple.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Highlight words in searched topics">
+				<param name="Local" value="htmlhelponhelp\highlt.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Advanced Full-Text Search">
+				<param name="Local" value="htmlhelponhelp\advanced.htm">
+				</OBJECT>
+			<UL>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Search for help topics">
+					<param name="Local" value="htmlhelponhelp\basic.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Find information with advanced full-text search">
+					<param name="Local" value="htmlhelponhelp\fts.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Search for words or phrases">
+					<param name="Local" value="htmlhelponhelp\wild.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Define search terms">
+					<param name="Local" value="htmlhelponhelp\bool.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Use nested expressions">
+					<param name="Local" value="htmlhelponhelp\nest.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Search for words in the titles of HTML files ">
+					<param name="Local" value="htmlhelponhelp\titles.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Find words similar to your search term ">
+					<param name="Local" value="htmlhelponhelp\similar.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Search previous results">
+					<param name="Local" value="htmlhelponhelp\previous.htm">
+					</OBJECT>
+			</UL>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Changing the Help Viewer">
+			<param name="Local" value="htmlhelponhelp\changes.htm">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Customize the Help Viewer">
+				<param name="Local" value="htmlhelponhelp\window.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Change formatting for accessibility">
+				<param name="Local" value="htmlhelponhelp\disability.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Change colors in the Topic pane">
+				<param name="Local" value="htmlhelponhelp\color.htm">
+				</OBJECT>
+		</UL>
+	</UL>
+</UL>
+</BODY></HTML>
